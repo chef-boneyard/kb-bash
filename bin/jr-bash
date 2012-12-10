@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -e
+[ -n "$JR_DEBUG" ] && set -x
+
+for testfile in "$(jr-suitepath bash)/"*_{test,spec}.{sh,bash} ; do
+  [ -e "$testfile" ] || break
+  echo "-----> Running $(basename $testfile)"
+  bash "$testfile"
+done
