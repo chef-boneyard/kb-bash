@@ -3,7 +3,7 @@ set -e
 [ -n "$JR_DEBUG" ] && set -x
 
 for testfile in "$(jr-suitepath bash)/"*_{test,spec}.{sh,bash} ; do
-  [ -e "$testfile" ] || break
+  [ -e "$testfile" ] || continue
   echo "-----> [bash] $(basename $testfile)"
   bash "$testfile"
 done
