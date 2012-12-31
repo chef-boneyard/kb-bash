@@ -2,6 +2,8 @@
 set -e
 [ -n "$JR_DEBUG" ] && set -x
 
+jr-suite-prepare bash
+
 for testfile in "$(jr-suitepath bash)/"*_{test,spec}.{sh,bash} ; do
   [ -e "$testfile" ] || continue
   echo "-----> [bash] $(basename $testfile)"
