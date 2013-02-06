@@ -2,4 +2,4 @@
 set -e
 
 # install bash package
-echo "package 'bash'" | jr-chef-apply
+echo "package 'bash'" | kb-chef-apply
